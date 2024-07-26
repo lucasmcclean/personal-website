@@ -1,0 +1,12 @@
+:root {
+  --fs-s: 1rem;
+  --fs-m: 1.5rem;
+  --fs-l: 2rem;
+  --fs-xl: 3rem;
+
+  --clr-p: #0b3948;
+  --clr-s: #416165;
+  --clr-n: #acb0bd;
+  --clr-nl: #f0f1f9;
+  --clr-nd: #141217;
+}

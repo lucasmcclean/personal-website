@@ -1,0 +1,16 @@
+package views
+
+import "github.com/ljmcclean/mcclean.xyz/views/components"
+
+templ Palette() {
+  @components.Document() {
+    @components.Header("Palette")
+    <body>
+      <div style="width:100vw;height:calc(100svh / 5);background-color:var(--clr-p);font-size:2rem">Primary</div>
+      <div style="width:100vw;height:calc(100svh / 5);background-color:var(--clr-s);font-size:2rem">Secondary</div>
+      <div style="width:100vw;height:calc(100svh / 5);background-color:var(--clr-n);font-size:2rem">Neutral</div>
+      <div style="width:100vw;height:calc(100svh / 5);background-color:var(--clr-nl);font-size:2rem">Neutral Light</div>
+      <div style="width:100vw;height:calc(100svh / 5);background-color:var(--clr-nd);font-size:2rem">Neutral Dark</div>
+    </body>
+  }
+}
