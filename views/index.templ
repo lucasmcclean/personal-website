@@ -3,11 +3,9 @@ package views
 import "github.com/ljmcclean/mcclean.xyz/views/components"
 
 templ Index(name string) {
-  <!DOCTYPE html>
-  <html lang="en">
-    @components.StdHeader("Hello, " + name + "!")
+  @components.Document() {
+    @components.Header("McClean.xyz")
     <body>
-      <p>Hello, { name }!</p>
     </body>
-  </html>
+  }
 }

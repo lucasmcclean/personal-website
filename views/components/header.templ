@@ -1,10 +1,14 @@
 package components
 
-templ StdHeader(title string) {
+templ Header(title string, styles ...string) {
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="/assets/normalize.css"/>
+    <link rel="stylesheet" href="/assets/vars.css"/>
+    for _, style := range styles {
+      <link rel="stylesheet" href={ "/assets/" + style }/>
+    }
     <script src="/assets/htmx.min.js" defer></script>
     <title>{ title }</title>
   </head>
