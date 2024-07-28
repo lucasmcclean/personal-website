@@ -17,8 +17,8 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.Handle("/", templ.Handler(views.Index("Eli")))
-	mux.Handle("/palette", templ.Handler(views.Palette()))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+	mux.Handle("/targets/", http.StripPrefix("/targets/", http.FileServer(http.Dir("targets"))))
 
 	srv := &http.Server{
 		Handler: mux,

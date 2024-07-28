@@ -1,12 +1,115 @@
-:root {
-  --fs-s: 1rem;
+:root,
+::backdrop {
+  --fs-xs: 1rem;
+  --fs-s: 1.15rem;
   --fs-m: 1.5rem;
   --fs-l: 2rem;
   --fs-xl: 3rem;
 
-  --clr-p: #0b3948;
-  --clr-s: #416165;
-  --clr-n: #acb0bd;
-  --clr-nl: #f0f1f9;
-  --clr-nd: #141217;
+  /* Default dark theme */
+  color-scheme: dark;
+  --clr-bg: #141217;
+  --clr-bga: #acb0bd;
+  --clr-t: #d0d1d9;
+  --clr-tl: #a0a1a9;
+  --clr-bdr: #8899aa;
+  --clr-a: #0b3948;
+  --clr-ah: #416165;
+  --clr-aht: var(--bg);
+  --clr-c: #e0e8f0;
+  --clr-f: #cccccc;
+  --clr-m: #ffdd33;
+  --clr-d: #111111;
+}
+
+img,
+video {
+  opacity: 0.8;
+}
+
+@media (prefers-color-scheme: light) {
+
+  :root,
+  ::backdrop {
+    /* Default light theme */
+    color-scheme: light;
+    --clr-bg: #f0f1f9;
+    --clr-bga: #bcc0cd;
+    --clr-t: #141217;
+    --clr-tl: #a0a1a9;
+    --clr-a: #416165;
+    --clr-ah: #0b3948;
+    --clr-aht: var(--bg);
+    --clr-c: #e0e8f0;
+    --clr-f: #cccccc;
+    --clr-d: #111111;
+  }
+
+  img,
+  video {
+    opacity: 1;
+  }
+}
+
+body {
+  color: var(--clr-t);
+  background: var(--clr-bg);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  font-size: var(--fs-l);
+}
+
+h3 {
+  font-size: var(fs--m);
+}
+
+h4 {
+  font-size: var(fs--m);
+}
+
+h5 {
+  font-size: var(fs--m);
+}
+
+h6 {
+  font-size: var(fs--m);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+a,
+a:visited {
+  color: var(--clr-a);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* REMEMBER TO DELETE */
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.one {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-bga);
+}
+
+.two {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-ah);
 }

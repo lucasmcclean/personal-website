@@ -1,0 +1,24 @@
+body {
+  overflow: clip;
+}
+
+main {
+  width: 90vw;
+  margin: auto auto;
+}
+
+.tab {
+  position: fixed;
+  right: 0;
+  height: .5rem;
+  background: var(--clr-a);
+  border: none;
+}
+
+.tab:hover {
+  outline: var(--clr-ah) solid 3px;
+}
+
+.tab:focus {
+  outline: var(--clr-ah) solid 3px;
+}

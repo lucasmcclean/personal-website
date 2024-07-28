@@ -3,9 +3,16 @@ package views
 import "github.com/ljmcclean/mcclean.xyz/views/components"
 
 templ Index(name string) {
-  @components.Document() {
-    @components.Header("McClean.xyz")
-    <body>
-    </body>
-  }
+	@components.Document() {
+		@components.Header("McClean.xyz", "index.css")
+		<body>
+			@components.Tab("10vw", "10vh", "projects.html")
+			@components.Tab("7vw", "20vh", "about.html")
+			<main>
+				<h1>About</h1>
+				<div class="one"></div>
+				<div class="two"></div>
+			</main>
+		</body>
+	}
 }
