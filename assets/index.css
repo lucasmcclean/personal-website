@@ -1,16 +1,23 @@
+:root {
+  --tab-size: min(15vw, 15vh);
+}
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: clip;
 }
 
 main {
-  width: 90vw;
-  margin: auto auto;
+  height: calc(100vh - 2 * var(--tab-size));
+  width: calc(100vw - 2 * var(--tab-size));
 }
 
 .tab {
   position: fixed;
-  right: 0;
-  height: .5rem;
+  height: var(--tab-size);
+  width: var(--tab-size);
   background: var(--clr-a);
   border: none;
 }
@@ -21,4 +28,24 @@ main {
 
 .tab:focus {
   outline: var(--clr-ah) solid 3px;
+}
+
+#tl {
+  top: 0;
+  left: 0;
+}
+
+#tr {
+  top: 0;
+  right: 0;
+}
+
+#bl {
+  top: calc(100vh - var(--tab-size));
+  left: 0;
+}
+
+#br {
+  top: calc(100vh - var(--tab-size));
+  right: 0;
 }

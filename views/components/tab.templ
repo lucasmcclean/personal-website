@@ -1,12 +1,5 @@
 package components
 
-css tabStyle(width, pos string) {
-	width: { width };
-	top: { pos };
-}
-
-templ Tab(width, pos, url string) {
-	<button class={ tabStyle(width, pos), "tab" } hx-get={ "targets/" + url } hx-swap="innerHTML" hx-target="main">
-		{ url }
-	</button>
+templ Tab(pos, url string) {
+	<button id={ pos } class="tab" hx-get={ "targets/" + url } hx-swap="innerHTML" hx-target="main"></button>
 }
