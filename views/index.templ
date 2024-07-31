@@ -3,18 +3,18 @@ package views
 import "github.com/ljmcclean/mcclean.xyz/views/components"
 
 templ Index(name string) {
-	@components.Document() {
-		@components.Header("McClean.xyz", "index.css")
-		<body>
-			@components.Tab("tl", "about.html")
-			@components.Tab("tr", "about.html")
-			@components.Tab("bl", "about.html")
-			@components.Tab("br", "about.html")
-			<main>
-				<h1>About</h1>
-				<div class="one"></div>
-				<div class="two"></div>
-			</main>
-		</body>
-	}
+@components.Document() {
+@components.Header("McClean.xyz", "index.css") {
+<script src="/assets/intercept.js" defer></script>
+}
+
+<body>
+	@components.Tab("tl", "about.html")
+	@components.Tab("tr", "projects.html")
+	@components.Tab("bl", "posts.html")
+	@components.Tab("br", "test.html")
+	<div clss="glow"></div>
+	<main></main>
+</body>
+}
 }

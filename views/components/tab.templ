@@ -1,5 +1,6 @@
 package components
 
 templ Tab(pos, url string) {
-	<button id={ pos } class="tab" hx-get={ "targets/" + url } hx-swap="innerHTML" hx-target="main"></button>
+<button id={ pos } class="tab" hx-trigger="mouseover" hx-get={ "targets/" + url } hx-swap="innerHTML"
+	hx-target="main"></button>
 }

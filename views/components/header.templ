@@ -11,6 +11,7 @@ templ Header(title string, styles ...string) {
   <link rel="stylesheet" href={ "/assets/" + style } />
   }
   <script src="/assets/htmx.min.js" defer></script>
+  { children... }
   <title>{ title }</title>
 </head>
 }

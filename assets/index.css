@@ -1,5 +1,6 @@
 :root {
   --tab-size: min(15vw, 15vh);
+  --tab-margin: min(10vw, 10vh);
 }
 
 body {
@@ -10,42 +11,53 @@ body {
 }
 
 main {
-  height: calc(100vh - 2 * var(--tab-size));
-  width: calc(100vw - 2 * var(--tab-size));
+  height: calc(100vh - var(--tab-size) * 2 - var(--tab-margin) * 1.5);
+  width: calc(100vw - var(--tab-size) * 3 - var(--tab-margin) * 2);
 }
 
 .tab {
   position: fixed;
   height: var(--tab-size);
   width: var(--tab-size);
-  background: var(--clr-a);
+  background: transparent;
   border: none;
+  cursor: pointer;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--clr-a);
+  clip-path: polygon(100% 0, 90% 10%, 10% 10%, 10% 90%, 0 100%, 0 0);
 }
 
 .tab:hover {
-  outline: var(--clr-ah) solid 3px;
-}
-
-.tab:focus {
-  outline: var(--clr-ah) solid 3px;
+  transform: scale(1.5);
 }
 
 #tl {
-  top: 0;
-  left: 0;
+  top: var(--tab-margin);
+  left: var(--tab-margin);
 }
 
 #tr {
-  top: 0;
-  right: 0;
+  top: var(--tab-margin);
+  right: var(--tab-margin);
+  rotate: 90deg;
 }
 
 #bl {
-  top: calc(100vh - var(--tab-size));
-  left: 0;
+  top: calc(100vh - var(--tab-size) - var(--tab-margin));
+  left: var(--tab-margin);
+  rotate: 270deg;
 }
 
 #br {
-  top: calc(100vh - var(--tab-size));
-  right: 0;
+  top: calc(100vh - var(--tab-size) - var(--tab-margin));
+  right: var(--tab-margin);
+  rotate: 180deg;
 }

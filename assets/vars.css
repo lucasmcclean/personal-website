@@ -54,6 +54,7 @@ video {
 body {
   color: var(--clr-t);
   background: var(--clr-bg);
+  font-size: var(--fs-s);
 }
 
 h1 {
