@@ -95,22 +95,3 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
-
-/* REMEMBER TO DELETE */
-main {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-.one {
-  width: 100%;
-  height: 100%;
-  background: var(--clr-bga);
-}
-
-.two {
-  width: 100%;
-  height: 100%;
-  background: var(--clr-ah);
-}

@@ -1,6 +1,13 @@
 package components
 
-templ Tab(pos, url string) {
-<button id={ pos } class="tab" hx-trigger="mouseover" hx-get={ "targets/" + url } hx-swap="innerHTML"
-	hx-target="main"></button>
+templ Tab(pos, url, target string) {
+	<button
+		id={ pos }
+		class="tab"
+		hx-trigger="mouseover, click"
+		hx-get={ "targets/" + url }
+		hx-swap="innerHTML"
+		hx-target={ target }
+		hx-on:mouseover={ templ.ComponentScript{Call: "() => htmx.trigger('#" + pos + "l', select)"} }
+	></button>
 }
