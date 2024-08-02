@@ -1,17 +1,16 @@
 "use strict";
 
 window.onload = function() {
-  const tabs = Array.from(document.getElementsByClassName("tab"));
+  const links = Array.from(document.getElementsByClassName("link"));
   let mostRecent = "";
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", activateSub);
-    tab.addEventListener("mouseover", activateSub);
+  links.forEach((link) => {
+    link.addEventListener("focus", select);
+    link.addEventListener("mouseover", select);
 
     // If the description is already active don't send a network request
-    htmx.on("#" + tab.id, "htmx:beforeRequest", (e) => {
+    htmx.on("#" + link.id, "htmx:beforeRequest", (e) => {
       let id = e.srcElement.id;
-      console.log(mostRecent, id);
       if (id == mostRecent) {
         e.preventDefault();
       } else {
@@ -21,23 +20,25 @@ window.onload = function() {
   });
 
   // Initialize page
-  activateSub({ srcElement: { id: "tl" } })
+  select({ srcElement: { id: "tl" } })
 }
 
 let previous = null;
 
-function activateSub(e) {
-  let tabName = e.srcElement.id;
-  if (tabName != previous) {
-    deactivateSub(previous);
-    document.getElementById(tabName + "-sub").style.animation = ".3s ease both select-link";
-    previous = tabName;
+function select(e) {
+  let linkName = e.srcElement.id;
+  if (linkName != previous) {
+    deselect(previous);
+    document.getElementById(linkName).style.animation = ".3s ease both select-link";
+    document.getElementById(linkName + "-tab").style.animation = ".3s ease both select-tab";
+    previous = linkName;
   }
 }
 
-function deactivateSub(tabName) {
-  if (tabName != null) {
-    document.getElementById(tabName + "-sub").style.animation = "";
+function deselect(linkName) {
+  if (linkName != null) {
+    document.getElementById(linkName).style.animation = "";
+    document.getElementById(linkName + "-tab").style.animation = "";
   }
 }
 

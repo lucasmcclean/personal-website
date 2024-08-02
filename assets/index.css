@@ -24,10 +24,10 @@ h1 {
 }
 
 nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  justify-items: end;
   padding-inline-end: 30%;
 }
 
@@ -60,7 +60,6 @@ nav a:visited {
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: transform .3s ease;
 }
 
 .tab::before {
@@ -74,38 +73,36 @@ nav a:visited {
   clip-path: polygon(100% 0, 90% 10%, 10% 10%, 10% 90%, 0 100%, 0 0);
 }
 
-.tab:focus {
-  transform: scale(1.3, 1.3);
-}
+@keyframes select-tab {
+  50% {
+    opacity: .5;
+  }
 
-.tab:hover {
-  transform: scale(1.3, 1.3);
-}
-
-@keyframes scale {
-  to {
+  100% {
+    color: var(--clr-ah);
     transform: scale(1.5);
   }
 }
 
-#tl {
+
+#tl-tab {
   top: var(--tab-margin);
   left: var(--tab-margin);
 }
 
-#tr {
+#tr-tab {
   top: var(--tab-margin);
   right: var(--tab-margin);
   rotate: 90deg;
 }
 
-#bl {
+#bl-tab {
   top: calc(100vh - var(--tab-size) - var(--tab-margin));
   left: var(--tab-margin);
   rotate: 270deg;
 }
 
-#br {
+#br-tab {
   top: calc(100vh - var(--tab-size) - var(--tab-margin));
   right: var(--tab-margin);
   rotate: 180deg;
