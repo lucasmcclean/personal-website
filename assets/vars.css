@@ -3,8 +3,9 @@
   --fs-xs: 1rem;
   --fs-s: 1.15rem;
   --fs-m: 1.5rem;
-  --fs-l: 2rem;
-  --fs-xl: 3rem;
+  --fs-ml: 2rem;
+  --fs-l: 3rem;
+  --fs-xl: 5rem;
 
   /* Default dark theme */
   color-scheme: dark;

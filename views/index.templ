@@ -4,7 +4,8 @@ import "github.com/ljmcclean/mcclean.xyz/views/components"
 
 templ Index(name string) {
 	@components.Document() {
-		@components.Header("McClean.xyz", "index.css") {
+		@components.Header("McClean.xyz") {
+			<link rel="stylesheet" href="/assets/index.css"/>
 			<script src="/assets/index.js" defer></script>
 		}
 		<body>
@@ -12,14 +13,26 @@ templ Index(name string) {
 			@components.Tab("tr", "projects.html", "#description")
 			@components.Tab("bl", "posts.html", "#description")
 			@components.Tab("br", "test.html", "#description")
-			<div clss="glow"></div>
 			<main>
-				<div id="description"></div>
+				<div id="description">
+					<h1>About</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum sapien a nunc tincidunt, quis
+						venenatis
+						elit sodales. Proin tempor, erat non tincidunt luctus, dui sapien varius magna, at malesuada mi metus in arcu.
+						Nam
+						a
+						orci ac urna volutpat malesuada. Nulla facilisi. Donec consectetur purus id nisi dignissim, ac dictum nisi
+						porttitor.
+						Maecenas tristique justo eu nulla sagittis, sed dignissim dolor ultricies. Curabitur eu velit vel velit egestas
+						venenatis at a arcu.
+					</p>
+				</div>
 				<nav>
-					<a id="tll" class="link">About</a>
-					<a id="tlr" class="link">Projects</a>
-					<a id="bll" class="link">Posts</a>
-					<a id="brl" class="link">Test</a>
+					<a id="tl-sub" href="/about">About</a>
+					<a id="tr-sub" href="/projects">Projects</a>
+					<a id="bl-sub" href="/posts">Posts</a>
+					<a id="br-sub" href="/test">Test</a>
 				</nav>
 			</main>
 		</body>

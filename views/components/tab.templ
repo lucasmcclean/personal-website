@@ -8,6 +8,6 @@ templ Tab(pos, url, target string) {
 		hx-get={ "targets/" + url }
 		hx-swap="innerHTML"
 		hx-target={ target }
-		hx-on:mouseover={ templ.ComponentScript{Call: "() => htmx.trigger('#" + pos + "l', select)"} }
+		aria-controls="description"
 	></button>
 }

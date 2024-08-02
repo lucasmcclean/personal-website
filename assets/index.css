@@ -15,11 +15,12 @@ main {
   grid-template-columns: 60% 1fr;
   height: calc(100vh - var(--tab-size) * 2 - var(--tab-margin) * 1.5);
   width: calc(100vw - var(--tab-size) * 3 - var(--tab-margin) * 2);
-  overflow: clip;
+  overflow: auto;
 }
 
 h1 {
   grid-column: 1 / 3;
+  font-size: var(--fs-xl);
 }
 
 nav {
@@ -33,7 +34,23 @@ nav {
 nav a {
   color: var(--clr-t);
   font-size: var(--fs-m);
+  text-decoration: none;
   transition: all .3s ease;
+}
+
+nav a:visited {
+  color: var(--clr-t);
+}
+
+@keyframes select-link {
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    font-size: var(--fs-l);
+    opacity: 1;
+  }
 }
 
 .tab {
@@ -58,16 +75,14 @@ nav a {
 }
 
 .tab:focus {
-  transform: scale(1.5, 1.5);
+  transform: scale(1.3, 1.3);
 }
 
 .tab:hover {
-  transform: scale(1.5, 1.5);
+  transform: scale(1.3, 1.3);
 }
 
 @keyframes scale {
-  from {}
-
   to {
     transform: scale(1.5);
   }
