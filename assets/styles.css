@@ -1,0 +1,136 @@
+/* General Styles */
+section {
+  padding-inline: 10%;
+}
+
+h1 {
+  font-size: clamp(5rem, 20vw, 10rem);
+  color: var(--clr-txt);
+  background: transparent;
+  line-height: 1.1;
+  z-index: 3;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 6rem;
+}
+
+p,
+a {
+  font-size: 1.5rem;
+}
+
+.middle-sec {
+  margin-block: 10vh;
+}
+
+.color-bar-acc {
+  display: inline-block;
+  height: 3.2rem;
+  width: 1vw;
+  margin-block: .4rem;
+  margin-inline: .7rem;
+  background: var(--clr-p);
+}
+
+.color-bar-acc.pr {
+  background: var(--clr-a);
+}
+
+/* Title Section */
+#title {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 100svh;
+  padding-inline: 8%;
+}
+
+#color-bar {
+  height: 60vh;
+  width: 3vw;
+  background: linear-gradient(var(--clr-p) 40%, var(--clr-a) 40%);
+}
+
+/* Skills Section */
+#skills {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.skills-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 920px) {
+  #skills {
+    grid-template: 1fr / repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .skills-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+.cell {
+  padding-inline: 1.1rem;
+  border: 3px solid var(--clr-p);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--clr-p), transparent 90%);
+  font-size: 2rem;
+  transition: all .3s;
+}
+
+.cell:hover {
+  border: 3px solid var(--clr-a);
+  background: color-mix(in srgb, var(--clr-a), transparent 90%);
+}
+
+.cell.pr {
+  border: 3px solid var(--clr-a);
+  background: color-mix(in srgb, var(--clr-a), transparent 90%);
+}
+
+.cell.pr:hover {
+  border: 3px solid var(--clr-p);
+  background: color-mix(in srgb, var(--clr-p), transparent 90%);
+}
+
+/* About Section */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#about div {
+  flex: 50%;
+}
+
+#about img {
+  width: 30vw;
+  min-width: 400px;
+  place-self: center;
+  object-fit: cover;
+  border: 5px solid var(--clr-p);
+  border-radius: 20px;
+}
+
+#about a span {
+  color: var(--clr-a);
+}

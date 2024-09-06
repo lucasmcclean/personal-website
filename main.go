@@ -1,39 +1,52 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"net"
 	"net/http"
-
-	"github.com/a-h/templ"
-	"github.com/ljmcclean/mcclean.xyz/reload"
-	"github.com/ljmcclean/mcclean.xyz/views"
+	"os"
+	"os/signal"
+	"sync"
+	"time"
 )
 
-const port = ":1234"
-const dev = true
-
 func main() {
-	mux := http.NewServeMux()
-
-	mux.Handle("/", templ.Handler(views.Index()))
-	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
-	mux.Handle("/targets/", http.StripPrefix("/targets/", http.FileServer(http.Dir("targets"))))
-
-	srv := &http.Server{
-		Handler: mux,
-	}
-
-	if dev {
-		mux.Handle("/reload", http.HandlerFunc(reload.Handler))
-		srv.Handler = reload.BrowserReloadMiddleware(mux)
-	}
-
-	fmt.Println("Listening on port ", port)
-	ln, err := net.Listen("tcp", port)
+	ctx := context.Background()
+	err := run(ctx)
 	if err != nil {
-		panic(err)
+		fmt.Printf("%s\n", err)
+		os.Exit(1)
 	}
+}
 
-	srv.Serve(ln)
+func run(ctx context.Context) error {
+	ctx, cancel := signal.NotifyContext(ctx, os.Interrupt)
+	defer cancel()
+
+	server := NewServer("localhost:8080")
+
+	go func() {
+		fmt.Printf("listening on %s\n", server.Addr)
+		err := server.ListenAndServe()
+		if err != nil && err != http.ErrServerClosed {
+			fmt.Printf("error listening and serving: %s\n", err)
+		}
+	}()
+
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		<-ctx.Done()
+		shutdownCtx := context.Background()
+		shutdownCtx, cancel := context.WithTimeout(shutdownCtx, time.Second*10)
+		defer cancel()
+		err := server.Shutdown(shutdownCtx)
+		if err != nil {
+			fmt.Printf("error shutting down http server: %s\n", err)
+		}
+	}()
+
+	wg.Wait()
+	return nil
 }
