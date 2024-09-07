@@ -1,4 +1,8 @@
 /* General Styles */
+body {
+  margin-inline: 5%;
+}
+
 section {
   padding-inline: 10%;
 }
@@ -16,16 +20,38 @@ h2 {
   font-size: 6rem;
 }
 
+h3 {
+  font-size: 3rem;
+}
+
 p,
-a {
+a,
+label {
   font-size: 1.5rem;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 20vh;
+}
+
+footer * {
+  color: color-mix(in srgb, var(--clr-txt), transparent 30%);
 }
 
 .middle-sec {
   margin-block: 10vh;
 }
 
-.color-bar-acc {
+.color-bar {
   display: inline-block;
   height: 3.2rem;
   width: 1vw;
@@ -34,7 +60,7 @@ a {
   background: var(--clr-p);
 }
 
-.color-bar-acc.pr {
+.color-bar.pr {
   background: var(--clr-a);
 }
 
@@ -47,7 +73,7 @@ a {
   padding-inline: 8%;
 }
 
-#color-bar {
+#color-bar-title {
   height: 60vh;
   width: 3vw;
   background: linear-gradient(var(--clr-p) 40%, var(--clr-a) 40%);
@@ -60,6 +86,7 @@ a {
   justify-items: center;
   align-items: center;
   gap: 15px;
+  margin-block-end: 20vh;
 }
 
 .skills-row {
@@ -134,3 +161,15 @@ a {
 #about a span {
   color: var(--clr-a);
 }
+
+.color-bar-hor {
+  height: 5vh;
+  margin-block: 20px;
+  background: var(--clr-p);
+}
+
+/* Projects Section */
+
+/* Info Section */
+
+/* Contact Section */

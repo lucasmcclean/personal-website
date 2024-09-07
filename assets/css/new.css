@@ -1,0 +1,26 @@
+/* General Styles */
+body {
+  margin-inline: 5%;
+}
+
+/* Title Section */
+#title {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--fs-xxl) / 3);
+  height: 100vw;
+  max-height: 100svh;
+  line-height: 1.1;
+}
+
+#title .color-bar {
+  height: calc((var(--fs-xxl) + 1rem) * 2);
+  width: calc(var(--fs-xxl) / 3);
+  background: linear-gradient(180deg, var(--clr-p) 40%, var(--clr-a) 40%);
+}
+
+#title h1 {
+  font-size: var(--fs-xxl);
+}
+
+/* Skills Section */

@@ -6,6 +6,8 @@
   --clr-bg: light-dark(#fff, #111);
   --clr-p: #43592E;
   --clr-a: #81A54A;
+
+  --fs-xxl: clamp(2rem, 18vw, 10rem);
 }
 
 /* BASE STYLES */

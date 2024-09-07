@@ -2,8 +2,6 @@ package main
 
 import (
 	"net/http"
-
-	"github.com/a-h/templ"
 )
 
 func NewServer(address string) *http.Server {
@@ -12,7 +10,7 @@ func NewServer(address string) *http.Server {
 	fs := http.FileServer(http.Dir("assets"))
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
-	mux.Handle("/{$}", templ.Handler(Index()))
+	mux.Handle("/{$}", handleIndex())
 
 	server := &http.Server{
 		Addr:    address,
@@ -20,4 +18,11 @@ func NewServer(address string) *http.Server {
 	}
 
 	return server
+}
+
+func handleIndex() http.Handler {
+	return http.HandlerFunc(
+		func(w http.ResponseWriter, r *http.Request) {
+			http.ServeFile(w, r, "assets/html/index.html")
+		})
 }
