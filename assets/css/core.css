@@ -7,13 +7,30 @@
   --clr-p: #43592E;
   --clr-a: #81A54A;
 
+  --fs-s: clamp(1rem, 3vw, 1.5rem);
+  --fs-l: clamp(2.5rem, 10vw, 5rem);
   --fs-xxl: clamp(2rem, 18vw, 10rem);
+
+  --sec-sep: clamp(5vh, 10vw, 15vh);
 }
 
 /* BASE STYLES */
 * {
   color: var(--clr-txt);
   background: var(--clr-bg);
+}
+
+p,
+a {
+  font-size: var(--fs-s);
+}
+
+h1 {
+  font-size: var(--fs-xxl);
+}
+
+h2 {
+  font-size: var(--fs-l);
 }
 
 /* RESET */
