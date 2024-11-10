@@ -2,20 +2,24 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"sync"
 	"time"
+
+	"github.com/lucasmcclean/personal-website/server"
 )
+
+const port = ":3000"
 
 func main() {
 	ctx := context.Background()
+
 	err := run(ctx)
 	if err != nil {
-		fmt.Printf("%s\n", err)
-		os.Exit(1)
+		log.Fatalf("server closed with error: %s\n", err)
 	}
 }
 
@@ -23,13 +27,13 @@ func run(ctx context.Context) error {
 	ctx, cancel := signal.NotifyContext(ctx, os.Interrupt)
 	defer cancel()
 
-	server := NewServer("localhost:8080")
+	srv := server.New(port)
 
 	go func() {
-		fmt.Printf("listening on %s\n", server.Addr)
-		err := server.ListenAndServe()
+		log.Printf("listening and serving on %s\n", srv.Addr)
+		err := srv.ListenAndServe()
 		if err != nil && err != http.ErrServerClosed {
-			fmt.Printf("error listening and serving: %s\n", err)
+			log.Printf("error listening and serving: %s\n", err)
 		}
 	}()
 
@@ -41,9 +45,9 @@ func run(ctx context.Context) error {
 		shutdownCtx := context.Background()
 		shutdownCtx, cancel := context.WithTimeout(shutdownCtx, time.Second*10)
 		defer cancel()
-		err := server.Shutdown(shutdownCtx)
+		err := srv.Shutdown(shutdownCtx)
 		if err != nil {
-			fmt.Printf("error shutting down http server: %s\n", err)
+			log.Printf("error shutting down http srv: %s\n", err)
 		}
 	}()
 

@@ -1,0 +1,45 @@
+header {
+  height: 100svh;
+  padding: 5%;
+}
+
+header p {
+  font-size: var(--fs-m);
+  line-height: 1;
+}
+
+#title-section {
+  display: flex;
+}
+
+#social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.links-line {
+  width: 3px;
+  flex-grow: .3;
+  align-self: center;
+  background: var(--clr-txt);
+}
+
+.links-line.first {
+  flex-grow: 1;
+}
+
+#social-links a {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 840px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

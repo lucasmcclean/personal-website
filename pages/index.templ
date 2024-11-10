@@ -1,0 +1,33 @@
+package pages
+
+import "github.com/lucasmcclean/personal-website/pages/components"
+
+templ Index() {
+	@components.Document() {
+		@components.Head("Lucas McClean") {
+			<link rel="stylesheet" href="/static/css/index.css"/>
+		}
+		<main>
+			<header>
+				<section id="title-section">
+					<div id="title">
+						<h1>Lucas<br/> McClean</h1>
+						<p>Backend & Fullstack Engineer</p>
+					</div>
+					<ul id="social-links">
+						<div class="links-line first"></div>
+						<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
+							@components.LinkedInLogo()
+						</a>
+						<a href="https://github.com/lucasmcclean" target="_blank">
+							@components.GitHubLogo()
+						</a>
+						<div class="links-line"></div>
+					</ul>
+				</section>
+				<section id="cityscape"></section>
+			</header>
+		</main>
+		<footer></footer>
+	}
+}

@@ -2,21 +2,21 @@
 :root {
   color-scheme: light dark;
 
-  --clr-txt: light-dark(#111, #fff);
-  --clr-bg: light-dark(#fff, #111);
-  --clr-p: #43592E;
-  --clr-a: #81A54A;
+  /* Color Palette */
+  --clr-txt: light-dark(#080809, #f8f8f8);
+  --clr-bg: light-dark(#f8f8f8, #080809);
+  --clr-p: #00ff88;
+  --clr-a: #f0f;
 
-  --fs-s: clamp(1rem, 3vw, 1.5rem);
-  --fs-l: clamp(2.5rem, 10vw, 5rem);
-  --fs-xxl: clamp(2rem, 18vw, 10rem);
-
-  --sec-sep: clamp(5vh, 10vw, 15vh);
+  /* Font Sizes */
+  --fs-s: clamp(1rem, 3vw + 1rem, 1.5rem);
+  --fs-m: clamp(1.1rem, 5vw + 1rem, 2rem);
+  --fs-l: clamp(2.5rem, 10vw + 1rem, 5rem);
 }
 
 /* BASE STYLES */
-* {
-  color: var(--clr-txt);
+body {
+  min-height: 100svh;
   background: var(--clr-bg);
 }
 
@@ -26,11 +26,16 @@ a {
 }
 
 h1 {
-  font-size: var(--fs-xxl);
+  font-size: var(--fs-l);
+  line-height: 1;
 }
 
 h2 {
   font-size: var(--fs-l);
+}
+
+.logo {
+  fill: var(--clr-txt);
 }
 
 /* RESET */
