@@ -37,6 +37,12 @@ header p {
   justify-content: center;
 }
 
+.grid-pattern {
+  height: 100%;
+  width: 100%;
+  fill: var(--clr-txt);
+}
+
 @media (min-width: 840px) {
   header {
     display: grid;
