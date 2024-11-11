@@ -1,18 +1,21 @@
 package components
 
-templ GridPattern() {
+templ GridPattern(id string) {
 	<svg
+		id={ id }
 		class="grid-pattern"
-		width="100"
 		height="100"
+		width="100"
 		viewBox="0 0 100 100"
+		xmlns="http://www.w3.org/2000/svg"
+		preserveAspectRatio="xMidYMid meet"
 	>
 		<defs>
-			<pattern id="grid-pattern" width=".125" height=".125">
+			<pattern id="pattern" width=".1055" height=".1055">
 				<rect height="5" width="1" x="2"></rect>
 				<rect height="1" width="5" y="2"></rect>
 			</pattern>
 		</defs>
-		<rect fill="url(#grid-pattern)" width="100" height="100"></rect>
+		<rect fill="url(#pattern)" width="100" height="100"></rect>
 	</svg>
 }

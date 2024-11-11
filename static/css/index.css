@@ -1,6 +1,7 @@
 header {
   height: 100svh;
   padding: 5%;
+  overflow: clip;
 }
 
 header p {
@@ -9,6 +10,7 @@ header p {
 }
 
 #title-section {
+  height: 100%;
   display: flex;
 }
 
@@ -37,15 +39,67 @@ header p {
   justify-content: center;
 }
 
-.grid-pattern {
+#title-cityscape {
+  position: relative;
+}
+
+#title-grid-pattern {
+  position: absolute;
+  display: none;
   height: 100%;
   width: 100%;
   fill: var(--clr-txt);
 }
 
-@media (min-width: 840px) {
+.building {
+  position: absolute;
+  background: var(--clr-bg);
+  bottom: 0;
+  border-top: 3px solid var(--clr-txt);
+  border-right: 3px solid var(--clr-txt);
+  border-left: 3px solid var(--clr-txt);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#building-1 {
+  left: 5%;
+  height: 70%;
+  width: 30%;
+}
+
+#building-2 {
+  left: 50%;
+  height: 40%;
+  width: 15%;
+  z-index: 1;
+}
+
+#building-3 {
+  left: 55%;
+  height: 70%;
+  width: 20%;
+}
+
+#moon {
+  position: absolute;
+  top: -20%;
+  right: 2.5%;
+  height: 30vw;
+  width: 30vw;
+  background: radial-gradient(circle at center,
+      var(--clr-txt) 50%,
+      transparent 50.45%);
+  z-index: -1;
+}
+
+@media (min-width: 985px) {
   header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45% 55%;
+  }
+
+  #title-grid-pattern {
+    display: block;
   }
 }
