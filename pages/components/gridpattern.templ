@@ -1,9 +1,10 @@
 package components
 
-templ GridPattern(id string) {
+var idCount = 0
+
+templ GridPattern(class string) {
 	<svg
-		id={ id }
-		class="grid-pattern"
+		class={ "grid-pattern " + class }
 		height="100"
 		width="100"
 		viewBox="0 0 100 100"
@@ -11,11 +12,11 @@ templ GridPattern(id string) {
 		preserveAspectRatio="xMidYMid meet"
 	>
 		<defs>
-			<pattern id="pattern" width=".1055" height=".1055">
+			<pattern id={ "pattern-" + class } width=".1055" height=".1055">
 				<rect height="5" width="1" x="2"></rect>
 				<rect height="1" width="5" y="2"></rect>
 			</pattern>
 		</defs>
-		<rect fill="url(#pattern)" width="100" height="100"></rect>
+		<rect fill={ "url(#pattern-" + class + ")" } width="100" height="100"></rect>
 	</svg>
 }

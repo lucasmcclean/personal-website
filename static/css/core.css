@@ -9,7 +9,7 @@
   --clr-a: #f0f;
 
   /* Font Sizes */
-  --fs-s: clamp(1rem, 3vw + 1rem, 1.5rem);
+  --fs-s: clamp(1rem, 3vw + .5rem, 1.5rem);
   --fs-m: clamp(1.1rem, 2.2vw + .25rem, 2rem);
   --fs-l: clamp(2.5rem, 5vw + 1rem, 5rem);
 }
@@ -36,13 +36,17 @@ h2 {
   font-size: var(--fs-l);
 }
 
-.logo {
+.fill {
   fill: var(--clr-txt);
+}
+
+.fill-inverse {
+  fill: var(--clr-bg);
+  background: var(--clr-txt);
 }
 
 .mono {
   font-family: 'Andale Mono', 'Courier New', Courier, monospace;
-
 }
 
 /* RESET */

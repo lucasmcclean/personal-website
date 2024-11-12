@@ -17,25 +17,37 @@ templ Index() {
 					<ul id="social-links">
 						<div class="links-line first"></div>
 						<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
-							@components.LinkedInLogo()
+							@components.LinkedInLogo("fill")
 						</a>
-						<a href="/static/docs/resume.pdf" download="Resume.pdf">
-							@components.ResumeLogo()
+						<a href="/static/doc/resume.pdf" download="Resume.pdf">
+							@components.ResumeLogo("fill")
 						</a>
 						<a href="https://github.com/lucasmcclean" target="_blank">
-							@components.GitHubLogo()
+							@components.GitHubLogo("fill")
 						</a>
 						<div class="links-line"></div>
 					</ul>
 				</section>
 				<section id="title-cityscape">
-					@components.GridPattern("title-grid-pattern")
+					@components.GridPattern("fill")
 					<div id="building-1" class="building"></div>
 					<div id="building-2" class="building"></div>
 					<div id="building-3" class="building"></div>
 					<div id="moon"></div>
 				</section>
 			</header>
+			<section id="about-section">
+				<div>
+					<img src="/static/img/portraitAir.jpg"/>
+					@components.GridPattern("fill")
+				</div>
+				<div>
+					<h2>About Me</h2>
+					<p>
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Suscipit consectetur hendrerit praesent molestie fames aptent magna torquent. Euismod finibus tristique ad nam mi molestie fames. Dui cubilia faucibus metus est pretium natoque velit amet massa.
+					</p>
+				</div>
+			</section>
 		</main>
 		<footer></footer>
 	}
