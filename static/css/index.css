@@ -14,6 +14,10 @@ header p {
   display: flex;
 }
 
+#title p {
+  letter-spacing: .2rem;
+}
+
 #social-links {
   display: flex;
   flex-direction: column;
@@ -52,6 +56,7 @@ header p {
 }
 
 .building {
+  display: none;
   position: absolute;
   background: var(--clr-bg);
   bottom: 0;
@@ -82,6 +87,7 @@ header p {
 }
 
 #moon {
+  display: none;
   position: absolute;
   top: -20%;
   right: 2.5%;
@@ -100,6 +106,14 @@ header p {
   }
 
   #title-grid-pattern {
+    display: block;
+  }
+
+  .building {
+    display: block;
+  }
+
+  #moon {
     display: block;
   }
 }
