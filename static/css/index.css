@@ -135,6 +135,36 @@ header p {
   object-fit: cover;
 }
 
+#about-section .grid-pattern {
+  display: none;
+  position: absolute;
+  top: 5%;
+  left: -1%;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 22px;
+  z-index: -1;
+}
+
+#building-4 {
+  height: 9%;
+  width: 3%;
+  bottom: 10%;
+  right: 5%;
+}
+
+#about-moon {
+  position: absolute;
+  bottom: 14%;
+  right: 1.5%;
+  height: 5vw;
+  width: 5vw;
+  background: radial-gradient(circle at center,
+      var(--clr-txt) 50%,
+      transparent 50.45%);
+  z-index: -1;
+}
+
 @media (min-width: 985px) {
   #about-section {
     display: grid;
@@ -149,12 +179,6 @@ header p {
   }
 
   #about-section .grid-pattern {
-    position: absolute;
-    top: 5%;
-    left: -1%;
-    height: 10vw;
-    width: 10vw;
-    border-radius: 20px;
-
+    display: block;
   }
 }

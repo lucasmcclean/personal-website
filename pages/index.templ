@@ -19,9 +19,6 @@ templ Index() {
 						<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
 							@components.LinkedInLogo("fill")
 						</a>
-						<a href="/static/doc/resume.pdf" download="Resume.pdf">
-							@components.ResumeLogo("fill")
-						</a>
 						<a href="https://github.com/lucasmcclean" target="_blank">
 							@components.GitHubLogo("fill")
 						</a>
@@ -30,22 +27,24 @@ templ Index() {
 				</section>
 				<section id="title-cityscape">
 					@components.GridPattern("fill")
+					<div id="moon"></div>
 					<div id="building-1" class="building"></div>
 					<div id="building-2" class="building"></div>
 					<div id="building-3" class="building"></div>
-					<div id="moon"></div>
 				</section>
 			</header>
 			<section id="about-section">
 				<div>
 					<img src="/static/img/portraitAir.jpg"/>
-					@components.GridPattern("fill")
+					@components.GridPattern("fill-acc")
 				</div>
 				<div>
 					<h2>About Me</h2>
 					<p>
 						Lorem ipsum odor amet, consectetuer adipiscing elit. Suscipit consectetur hendrerit praesent molestie fames aptent magna torquent. Euismod finibus tristique ad nam mi molestie fames. Dui cubilia faucibus metus est pretium natoque velit amet massa.
 					</p>
+					<div id="about-moon"></div>
+					<div id="building-4" class="building"></div>
 				</div>
 			</section>
 		</main>
