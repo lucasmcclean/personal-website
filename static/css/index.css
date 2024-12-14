@@ -1,7 +1,14 @@
+/* PAGE */
 main {
   padding-inline: 5%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--clr-p);
+}
+
+/* TITLE SECTION */
 header {
   height: 100svh;
   padding-block: 5%;
@@ -18,8 +25,20 @@ header p {
   display: flex;
 }
 
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 #title p {
   letter-spacing: .2rem;
+}
+
+#title-section img {
+  height: 65%;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 #social-links {
@@ -62,7 +81,7 @@ header p {
   display: none;
   position: absolute;
   background: var(--clr-bg);
-  bottom: 0;
+  bottom: -.1%;
   border-top: 3px solid var(--clr-txt);
   border-right: 3px solid var(--clr-txt);
   border-left: 3px solid var(--clr-txt);
@@ -93,9 +112,9 @@ header p {
   display: none;
   position: absolute;
   top: -20%;
-  right: 2.5%;
-  height: 30vw;
-  width: 30vw;
+  right: 1.5%;
+  height: 70svh;
+  width: 70svh;
   background: radial-gradient(circle at center,
       var(--clr-txt) 50%,
       transparent 50.45%);
@@ -106,6 +125,10 @@ header p {
   header {
     display: grid;
     grid-template-columns: 45% 55%;
+  }
+
+  #title-section img {
+    display: none;
   }
 
   #title-cityscape .grid-pattern {
@@ -121,10 +144,11 @@ header p {
   }
 }
 
+/* ABOUT SECTION */
 #about-section {
   position: relative;
-  height: 100svh;
-  padding-block: 5%;
+  padding-top: 5%;
+  padding-bottom: 10%;
 }
 
 #about-section img {
@@ -147,8 +171,9 @@ header p {
 }
 
 #building-4 {
-  height: 9%;
-  width: 3%;
+  display: block;
+  height: 6%;
+  width: 5.5%;
   bottom: 10%;
   right: 5%;
 }
@@ -156,12 +181,12 @@ header p {
 #about-moon {
   position: absolute;
   bottom: 14%;
-  right: 1.5%;
-  height: 5vw;
-  width: 5vw;
+  right: 1.4%;
+  height: 8vw;
+  width: 8vw;
   background: radial-gradient(circle at center,
-      var(--clr-txt) 50%,
-      transparent 50.45%);
+      var(--clr-p) 50%,
+      transparent 52%);
   z-index: -1;
 }
 
@@ -181,4 +206,31 @@ header p {
   #about-section .grid-pattern {
     display: block;
   }
+
+  #building-4 {
+    height: 11%;
+  }
+}
+
+/* ARTICLES SECTION */
+#articles-section p {
+  max-width: 70%;
+}
+
+/* LIGHT/DARK BUTTON */
+#light-dark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 50%;
+  background: var(--clr-bg);
+  border: 2px solid var(--clr-txt);
+}
+
+footer {
+  font-size: var(--fs-s);
+  padding: 5%;
+  opacity: .85;
 }

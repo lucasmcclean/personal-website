@@ -5,12 +5,13 @@
   /* Color Palette */
   --clr-txt: light-dark(#080809, #f8f8f8);
   --clr-bg: light-dark(#f8f8f8, #080809);
-  --clr-p: #00ff88;
+  --clr-p: #55ddaa;
 
   /* Font Sizes */
+  --fs-xs: clamp(.8rem, 3vw + .5rem, 1rem);
   --fs-s: clamp(1rem, 3vw + .5rem, 1.5rem);
-  --fs-m: clamp(1.1rem, 2.2vw + .25rem, 2rem);
-  --fs-l: clamp(2.5rem, 5vw + 1rem, 5rem);
+  --fs-m: clamp(1.1rem, 4vw + .25rem, 2rem);
+  --fs-l: clamp(2.5rem, 10vw + 1rem, 5rem);
 }
 
 /* BASE STYLES */
@@ -39,13 +40,25 @@ h2 {
   fill: var(--clr-txt);
 }
 
+.stroke {
+  stroke: var(--clr-txt);
+}
+
 .fill-inverse {
   fill: var(--clr-bg);
   background: var(--clr-txt);
 }
 
+.stroke-inverse {
+  stroke: var(--clr-bg);
+}
+
 .fill-acc {
   fill: var(--clr-p);
+}
+
+.stroke-acc {
+  stroke: var(--clr-p);
 }
 
 .mono {

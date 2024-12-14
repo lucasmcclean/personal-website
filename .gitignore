@@ -1,4 +1,5 @@
 **/*_templ.go
 
+db/pg_data
+
 serve
-outline.md

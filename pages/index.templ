@@ -1,6 +1,9 @@
 package pages
 
 import "github.com/lucasmcclean/personal-website/pages/components"
+import "github.com/lucasmcclean/personal-website/pages/components/logos"
+import "time"
+import "strconv"
 
 templ Index() {
 	@components.Document() {
@@ -11,16 +14,19 @@ templ Index() {
 			<header>
 				<section id="title-section">
 					<div id="title">
-						<h1>Lucas<br/> McClean</h1>
-						<p class="mono">Backend Engineer</p>
+						<div>
+							<h1>Lucas<br/> McClean</h1>
+							<p class="mono">Software Engineer</p>
+						</div>
+						<img src="/static/img/portraitAir.jpg" alt="Portrait of Lucas McClean"/>
 					</div>
 					<ul id="social-links">
 						<div class="links-line first"></div>
 						<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
-							@components.LinkedInLogo("fill")
+							@logos.LinkedInLogo("fill")
 						</a>
 						<a href="https://github.com/lucasmcclean" target="_blank">
-							@components.GitHubLogo("fill")
+							@logos.GitHubLogo("fill")
 						</a>
 						<div class="links-line"></div>
 					</ul>
@@ -35,19 +41,34 @@ templ Index() {
 			</header>
 			<section id="about-section">
 				<div>
-					<img src="/static/img/portraitAir.jpg"/>
-					@components.GridPattern("fill-acc")
+					<img src="/static/img/portraitAir.jpg" alt="Portrait of Lucas McClean"/>
+					@components.GridPattern("fill")
 				</div>
 				<div>
 					<h2>About Me</h2>
 					<p>
-						Lorem ipsum odor amet, consectetuer adipiscing elit. Suscipit consectetur hendrerit praesent molestie fames aptent magna torquent. Euismod finibus tristique ad nam mi molestie fames. Dui cubilia faucibus metus est pretium natoque velit amet massa.
+						I've been programming <b>backend</b> systems for a little over two years. Primarily, I work
+						with Go and PostgreSQL but I have experience with numerous other languages and databases.
+						My focus, always, is to design <b>efficient</b> and <b>effective</b> architectures.
 					</p>
+					<br/>
+					<a href="/about-me">&gt; Learn more about me</a>
 					<div id="about-moon"></div>
 					<div id="building-4" class="building"></div>
 				</div>
 			</section>
+			<section id="articles-section">
+				<h2>Articles</h2>
+				<p>
+					Check out my collection of tech and programming articles, where I address topics like Go, Postgres, and Docker, along with any other subjects that catch my interest.
+				</p>
+				<br/>
+				<a href="/articles">&gt; Find all of my articles</a>
+			</section>
 		</main>
-		<footer></footer>
+		<button id="light-dark"></button>
+		<footer>
+			<p>&copy; Lucas McClean { strconv.Itoa(time.Now().Year()) }</p>
+		</footer>
 	}
 }
