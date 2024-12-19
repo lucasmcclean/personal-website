@@ -11,36 +11,22 @@ templ Index() {
 			<link rel="stylesheet" href="/static/css/index.css"/>
 		}
 		<main>
-			<header>
-				<section id="title-section">
-					<div id="title">
-						<div>
-							<h1>Lucas<br/> McClean</h1>
-							<p class="mono">Software Engineer</p>
-						</div>
-						<img src="/static/img/portraitAir.jpg" alt="Portrait of Lucas McClean"/>
-					</div>
-					<ul id="social-links">
-						<div class="links-line first"></div>
-						<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
-							@logos.LinkedInLogo("fill")
-						</a>
-						<a href="https://github.com/lucasmcclean" target="_blank">
-							@logos.GitHubLogo("fill")
-						</a>
-						<div class="links-line"></div>
-					</ul>
-				</section>
-				<section id="title-cityscape">
-					@components.GridPattern("fill")
-					<div id="moon"></div>
-					<div id="building-1" class="building"></div>
-					<div id="building-2" class="building"></div>
-					<div id="building-3" class="building"></div>
-				</section>
-			</header>
+			<section id="title-section">
+				<div id="title">
+					<h1>Lucas McClean</h1>
+					<p class="mono">Software Engineer</p>
+				</div>
+				<ul id="social-links">
+					<a href="https://linkedin.com/in/lucasmcclean" target="_blank">
+						@logos.LinkedInLogo("fill")
+					</a>
+					<a href="https://github.com/lucasmcclean" target="_blank">
+						@logos.GitHubLogo("fill")
+					</a>
+				</ul>
+			</section>
 			<section id="about-section">
-				<div>
+				<div id="portrait">
 					<img src="/static/img/portraitAir.jpg" alt="Portrait of Lucas McClean"/>
 					@components.GridPattern("fill")
 				</div>
@@ -54,16 +40,19 @@ templ Index() {
 					<br/>
 					<a href="/about-me">&gt; Learn more about me</a>
 					<div id="about-moon"></div>
-					<div id="building-4" class="building"></div>
+					<div id="building"></div>
 				</div>
 			</section>
 			<section id="articles-section">
-				<h2>Articles</h2>
-				<p>
-					Check out my collection of tech and programming articles, where I address topics like Go, Postgres, and Docker, along with any other subjects that catch my interest.
-				</p>
-				<br/>
-				<a href="/articles">&gt; Find all of my articles</a>
+				<div>
+					<h2>Articles</h2>
+					<p>
+						Check out my collection of tech and programming articles, where I address topics like Go, Postgres, and Docker, along with any other subjects that catch my interest.
+					</p>
+					<br/>
+					<a href="/articles">&gt; Find all of my articles</a>
+				</div>
+				<div></div>
 			</section>
 		</main>
 		<button id="light-dark"></button>
